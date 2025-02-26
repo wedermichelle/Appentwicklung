@@ -8,6 +8,6 @@ st.title("Demo App")
 # Streamlit über den Text unten direkt in die App - cool!
 """
 Diese App wurde von folgenden Personen entwickelt:
-- Anna Müller (wedermic@students.zhaw.ch)
-- Peter Meier (pianelis@students.zhaw.ch)
+- Michelle Weder (wedermic@students.zhaw.ch)
+- Lisa Pianezzi (pianelis@students.zhaw.ch)
 """
