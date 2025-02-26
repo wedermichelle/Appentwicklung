@@ -1,9 +1,9 @@
-# BMLD-Inf2-AppV0
+# BMLD-Inf2 DemoApp
 
 Das leere Gerüst um eine App aufzubauen.
 
-## Autor
+## Autorinnen
 
-Samuel Wehrli (wehs@zhaw.ch)
+Michelle & Lisa
 
 
