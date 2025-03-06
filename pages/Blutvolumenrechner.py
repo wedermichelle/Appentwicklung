@@ -1,5 +1,8 @@
 import streamlit as st
 from PIL import Image, ImageDraw
+import os
+
+image_path = os.path.join(os.path.dirname(__file__), "milchkarton.png")
 
 st.title("Blutvolumenrechner")
 
@@ -35,7 +38,8 @@ if st.session_state.geschlecht:
         st.write(f"Dies entspricht so vielen Milchkartons:")
 
         try:
-            milk_carton_image = Image.open("milchkarton.png")
+            image_path = os.path.join(os.path.dirname(__file__), "milchkarton.png")
+            milk_carton_image = Image.open(image_path)
         except FileNotFoundError:
             st.error("Das Bild 'milchkarton.png' wurde nicht gefunden. Bitte stellen Sie sicher, dass es im gleichen Verzeichnis wie das Skript gespeichert ist.")
             st.stop()
@@ -43,19 +47,18 @@ if st.session_state.geschlecht:
             st.error(f"Ein Fehler ist beim Laden des Bildes aufgetreten: {e}")
             st.stop()
 
-        # Calculate the total width of the result image
+
         total_width = milk_carton_image.width * int(blutvolumen) + int(milk_carton_image.width * (blutvolumen - int(blutvolumen)))
         result_image = Image.new("RGBA", (total_width, milk_carton_image.height))
 
-        # Paste the milk carton images into the result image
+
         for i in range(int(blutvolumen)):
             result_image.paste(milk_carton_image, (i * milk_carton_image.width, 0))
 
-        # If there is a partial milk carton, add it
+    
         partial_volume = blutvolumen - int(blutvolumen)
         if partial_volume > 0:
             partial_carton = milk_carton_image.crop((0, 0, int(milk_carton_image.width * partial_volume), milk_carton_image.height))
             result_image.paste(partial_carton, (int(blutvolumen) * milk_carton_image.width, 0))
 
-        # Display the result image
         st.image(result_image, caption="Blutvolumen in Milchkartons")
