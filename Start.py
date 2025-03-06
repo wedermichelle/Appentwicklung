@@ -11,3 +11,4 @@ Diese App wurde von folgenden Personen entwickelt:
 - Michelle Weder (wedermic@students.zhaw.ch)
 - Lisa Pianezzi (pianelis@students.zhaw.ch)
 """
+
