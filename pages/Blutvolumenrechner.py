@@ -1,6 +1,8 @@
+from utils.login_manager import LoginManager
+LoginManager().go_to_login('Start.py')
 import streamlit as st
 from PIL import Image, ImageDraw
-import os
+import os 
 
 image_path = os.path.join(os.path.dirname(__file__), "milchkarton.png")
 
@@ -33,6 +35,7 @@ if st.session_state.geschlecht:
             blutvolumen = 0.3669 * (groesse / 100) ** 3 + 0.03219 * gewicht + 0.6041
         else:
             blutvolumen = 0.3561 * (groesse / 100) ** 3 + 0.03308 * gewicht + 0.1833
+        
 
         st.write(f"Ihr approximatives Blutvolumen beträgt: {blutvolumen:.2f} Liter")
         st.write(f"Dies entspricht so vielen Milchkartons:")
