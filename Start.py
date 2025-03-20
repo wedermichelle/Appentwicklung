@@ -14,7 +14,15 @@ data_manager.load_user_data(
     parse_dates = ['timestamp']
     )
 
-st.title("Demo App")
+st.title("Blutvolumenrechner")
+
+st.write("Willkommen zum Blutvolumenrechner!")
+st.write(" Hier können Sie Ihr Blutvolumen berechnen und über die Zeit verfolgen.")
+
+st.write("Dieser Rechner verwendet die Nadlerformel, welche die Grösse, das Gewicht und das Geschlecht miteinbezieht um ein approximatives Blutvolumen zu berechnen. Dies kann nützlich sein, um abschätzen zu können, ob man Blutspenden darf oder nicht.")
+
+
+st.write("Disclaimer: Viele Krankheiten und Gesundheitszustände können das Blutvolumen beeinflussen. Auch Sportler erreichen durch das Training oftmals ein höheres Blutvolumen. Der Rechner beachtet diese Änderungen nicht und soll demnach nur als Schätzung wahrgenommen werden!")
 
 # !! WICHTIG: Eure Emails müssen in der App erscheinen!!
 
